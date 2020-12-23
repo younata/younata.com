@@ -10,7 +10,7 @@ body {
 @media (prefers-color-scheme: dark) {
     body {
         --text-color: #E0E1E2;
-        --background-color: #363B40;
+        --background-color: #121213;
         --link-color: #5F61E3;
         --border-color: #98989D;
         --visited-color: #BE60EF;
