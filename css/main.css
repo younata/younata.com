@@ -61,7 +61,6 @@ a:visited {
 .container {
     display: flex;
     align-items: flex-start;
-    /*flex-wrap: wrap;*/
     margin: 16px;
     align-content: space-around;
 }
@@ -72,7 +71,13 @@ a:visited {
 
 .container .about-me {
     flex: 0 1 auto;
-    width: 200px;
+    width: 20%;
+}
+
+.about-me {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
 }
 
 .container .projects-list {
@@ -94,6 +99,10 @@ a:visited {
     margin-top: 8px;
 }
 
+.mobile-title {
+    display: none;
+}
+
 .project img {
     margin: 0 auto;
 }
@@ -103,7 +112,14 @@ a:visited {
     border: solid 2px var(--border-color);
     margin: 4px;
     border-radius: 8px;
-    width: 25%;
+    flex: 1 1 25%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.project > {
+    flex: 1 1 auto;
 }
 
 .project>a, .project>a:visited {
@@ -129,11 +145,21 @@ a:visited {
 }
 
 @media screen and (max-width: 750px) {
+    .mobile-title {
+        display: block;
+        width: 100%;
+    }
+
+    .wide-title {
+        display: none;
+    }
+
     .container {
         flex-wrap: wrap;
     }
     .container .about-me {
         width: auto;
+        order: 99;
     }
 
     .container .projects-list {
@@ -142,5 +168,7 @@ a:visited {
 
     .project {
         width: 100%;
+        max-width: 100%;
+        flex-basis: auto;
     }
 }
